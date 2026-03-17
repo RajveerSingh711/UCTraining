@@ -22,6 +22,9 @@ public class QuantityLength {
         QuantityLength other=(QuantityLength)obj;
         double thisInches=this.toInches();
         double otherInches=other.toInches();
+        if(other.unit==null){
+            throw new IllegalArgumentException("Unit cannot be null");
+        }
         return Math.abs(thisInches-otherInches)<0.0001;
     }
     @Override
